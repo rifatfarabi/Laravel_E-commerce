@@ -1,6 +1,9 @@
 <?php
 
 //Global image file uploader
+
+use Illuminate\Support\Facades\Auth;
+
 function uploadImage($request, $arribute_name, $save_path, $width = null, $height = null, $imageName = null){
 
     if($request->hasFile($arribute_name)){
@@ -69,7 +72,7 @@ function getRole(){
 function hasRole($role){
 
     if(Auth::check()){
-        return Auth::user()->roles()->where('title', $role)->first() ? true : false;
+       return Auth::user()->roles()->where('title', $role)->first() ? true : false;
     }
 
     return false;

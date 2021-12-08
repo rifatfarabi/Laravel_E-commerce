@@ -41,4 +41,12 @@ class LoginController extends Controller
     public function showAdminLogin(){
         return view('auth.admin-login');
     }
+
+    public function redirectTo(){
+        if(hasRole("admin")){
+            return "/dashboard/admin";
+        }else if(hasRole("customer")){
+            return "/dashboard/customer";
+        }
+    }
 }

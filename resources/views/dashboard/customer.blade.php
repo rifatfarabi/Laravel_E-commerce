@@ -1,10 +1,10 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
 
     <div class="row">
         <div class="col-md-12">
-            <h1>Hello Admin</h1>
+            <h1>Hello Customer</h1>
             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
                 Logout
             </a>    
