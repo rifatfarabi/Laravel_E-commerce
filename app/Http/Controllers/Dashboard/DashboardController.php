@@ -14,7 +14,7 @@ class DashboardController extends Controller
     }
 
     public function customerDashboard(){
-        abort_if(Gate::denies("customer"), Response::HTTP_FORBIDDEN, "Not Authorized");
+        // abort_if(Gate::denies("customer"), Response::HTTP_FORBIDDEN, "Not Authorized");
         return view('dashboard.customer');
     }
 }

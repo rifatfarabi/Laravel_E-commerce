@@ -3,6 +3,9 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Frontend\MainController;
+use App\Http\Controllers\UserManagement\PermissionController;
+use App\Http\Controllers\UserManagement\RoleController;
+use App\Http\Controllers\UserManagement\UserController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -28,4 +31,14 @@ Route::get('/admin/login',[LoginController::class, 'showAdminLogin'])->name('adm
 Route::group(["middleware" => "auth"],function () { 
     Route::get('/dashboard/admin', [DashboardController::class, 'adminDashboard'])->name('dashboard.admin');
     Route::get('/dashboard/customer', [DashboardController::class, 'customerDashboard'])->name('dashboard.customer');
+
+    
+    //Permissions
+    Route::resource('permissions', PermissionController::class);
+    
+    //Roles
+    Route::resource('roles', RoleController ::class);
+
+    //Users
+    Route::resource('users', UserController::class);
 });

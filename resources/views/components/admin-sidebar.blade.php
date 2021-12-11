@@ -2,7 +2,7 @@
 
     <div class="c-sidebar-brand d-md-down-none">
         <a class="c-sidebar-brand-full h4" href="#">
-            {{ trans('panel.site_title') }}
+            {{ __('Admin Panel') }}
         </a>
     </div>
 
@@ -12,7 +12,7 @@
                 <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
 
                 </i>
-                {{ trans('global.dashboard') }}
+                {{ __('Dashboard') }}
             </a>
         </li>
        
@@ -21,34 +21,34 @@
                     <i class="fa-fw fas fa-users c-sidebar-nav-icon">
 
                     </i>
-                    {{ trans('cruds.userManagement.title') }}
+                    {{ __('User Management') }}
                 </a>
                 <ul class="c-sidebar-nav-dropdown-items">
                    
                         <li class="c-sidebar-nav-item">
-                            <a href="" class="c-sidebar-nav-link {{ request()->is("admin/permissions") || request()->is("admin/permissions/*") ? "c-active" : "" }}">
+                            <a href="{{ route("permissions.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/permissions") || request()->is("admin/permissions/*") ? "c-active" : "" }}">
                                 <i class="fa-fw fas fa-unlock-alt c-sidebar-nav-icon">
 
                                 </i>
-                                {{ trans('cruds.permission.title') }}
+                                {{ __('Permission') }}
                             </a>
                         </li>
 
                         <li class="c-sidebar-nav-item">
-                            <a href="" class="c-sidebar-nav-link {{ request()->is("admin/roles") || request()->is("admin/roles/*") ? "c-active" : "" }}">
+                            <a href="{{ route("roles.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/roles") || request()->is("admin/roles/*") ? "c-active" : "" }}">
                                 <i class="fa-fw fas fa-briefcase c-sidebar-nav-icon">
 
                                 </i>
-                                {{ trans('cruds.role.title') }}
+                                {{ __('Role') }}
                             </a>
                         </li>
 
                         <li class="c-sidebar-nav-item">
-                            <a href="" class="c-sidebar-nav-link {{ request()->is("admin/users") || request()->is("admin/users/*") ? "c-active" : "" }}">
+                            <a href="{{ route("users.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/users") || request()->is("admin/users/*") ? "c-active" : "" }}">
                                 <i class="fa-fw fas fa-user c-sidebar-nav-icon">
 
                                 </i>
-                                {{ trans('cruds.user.title') }}
+                                {{ __('User') }}
                             </a>
                         </li>
                    
@@ -61,7 +61,7 @@
                     <a class="c-sidebar-nav-link {{ request()->is('profile/password') || request()->is('profile/password/*') ? 'c-active' : '' }}" href="{{ route('profile.password.edit') }}">
                         <i class="fa-fw fas fa-key c-sidebar-nav-icon">
                         </i>
-                        {{ trans('global.change_password') }}
+                        {{ __('global.change_password') }}
                     </a>
                 </li>
 
@@ -71,7 +71,7 @@
                 <i class="c-sidebar-nav-icon fas fa-fw fa-sign-out-alt">
 
                 </i>
-                {{ trans('global.logout') }}
+                {{ __('Logout') }}
             </a>
         </li>
     </ul>
